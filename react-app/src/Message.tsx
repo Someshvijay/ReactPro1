@@ -2,7 +2,7 @@
 //PascalCasing
 function Message(){
 
-    const name = '' ;
+    const name = 'Somesh Vijay' ;
     if (name){
 
         return <h1>Hello {name} </h1>;

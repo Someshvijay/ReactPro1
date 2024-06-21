@@ -1,16 +1,35 @@
 import Message from "../Message";
+import { useState } from "react";
 
-function ListGroup() {
-  let items = ["paris", "new york", "san", "india", "US"];
+interface Props {
+  items: string[];
+  heading: string;
+}
 
+function ListGroup({ items, heading }: Props) {
+  //let items = ["paris", "new york", "san", "india", "US"];
+  const [selectedIndex, setSelectedIndex] = useState(-1);
   //const message = items.length === 0 ? <p>No items found</p> : null;
+
+  /*const handleClick = (event: MouseEvent) => {
+    console.log(event);
+  };*/
 
   return (
     <div>
+      <h1>{heading}</h1>
       {items.length === 0 && <p>No Items Found</p>}
       <ul className="list-group">
-        {items.map((item) => (
-          <li key={item} className="list-group-item">
+        {items.map((item, index) => (
+          <li
+            key={item}
+            onClick={() => setSelectedIndex(index)}
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
+          >
             {item}
           </li>
         ))}

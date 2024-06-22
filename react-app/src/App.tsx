@@ -2,6 +2,7 @@ import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
+import Hooks from "./components/Hooks";
 
 function App() {
   const items = ["paris", "new york", "san", "india", "US"];
@@ -27,6 +28,7 @@ function App() {
       >
         This is my new Button
       </Button>
+      <Hooks />
     </div>
   );
 }
